@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Knowshelf MCP icon">
+  <defs>
+    <linearGradient id="bg" x1="36" y1="28" x2="220" y2="228" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1d4ed8"/>
+      <stop offset=".55" stop-color="#0f766e"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="page" x1="70" y1="68" x2="170" y2="190" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff7ed"/>
+      <stop offset="1" stop-color="#dbeafe"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="56" fill="url(#bg)"/>
+  <path d="M54 68c0-9 7-16 16-16h51c13 0 25 5 34 14 9-9 21-14 34-14h17c9 0 16 7 16 16v119c0 6-5 11-11 11h-24c-12 0-23 4-32 12-9-8-20-12-32-12H65c-6 0-11-5-11-11V68Z" fill="#0b1220" opacity=".3"/>
+  <path d="M44 62c0-9 7-16 16-16h53c14 0 27 6 37 16v132c-10-9-23-14-37-14H55c-6 0-11-5-11-11V62Z" fill="url(#page)"/>
+  <path d="M150 62c10-10 23-16 37-16h19c9 0 16 7 16 16v107c0 6-5 11-11 11h-24c-14 0-27 5-37 14V62Z" fill="#ecfeff"/>
+  <path d="M150 62v132" stroke="#2563eb" stroke-width="7" stroke-linecap="round"/>
+  <path d="M73 82h45M73 108h52M73 134h43M181 82h18M173 108h29M173 134h22" stroke="#475569" stroke-width="8" stroke-linecap="round" opacity=".8"/>
+  <circle cx="170" cy="156" r="31" fill="#f8fafc" stroke="#0f766e" stroke-width="10"/>
+  <path d="m192 179 27 27" stroke="#f59e0b" stroke-width="14" stroke-linecap="round"/>
+  <path d="M160 156h20M170 146v20" stroke="#0f766e" stroke-width="8" stroke-linecap="round"/>
+</svg>

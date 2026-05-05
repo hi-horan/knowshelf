@@ -1,0 +1,81 @@
+database:
+  path: ./data/knowshelf.sqlite
+library:
+  markdown_dir: ./books
+log:
+  level: info
+observability:
+  service_name: knowshelf
+  service_version: 0.1.0
+  trace:
+    enabled: false
+    exporter: none
+    endpoint: ""
+    insecure: true
+    sample_ratio: 1
+segment:
+  dictionaries:
+    - zh
+search:
+  default_limit: 10
+  candidate_limit: 40
+  min_score: 0
+  rrf_weights:
+    original_vector: 2.5
+    original_bm25: 1.5
+    rewritten_vector: 1.2
+    rewritten_bm25: 1.0
+    hypothetical_answer: 0.8
+  enable_vector: true
+  enable_rerank: true
+models:
+  embedding:
+    provider: ""
+    endpoint: ""
+    base_url: ""
+    model: ""
+    api_key: ""
+    api_key_env: ""
+    timeout_ms: 0
+    dimensions: 1024
+  rerank:
+    provider: ""
+    endpoint: ""
+    base_url: ""
+    model: ""
+    api_key: ""
+    timeout_ms: 0
+    dimensions: 0
+mcp:
+  address: 127.0.0.1:8765
+  path: /mcp
+  json_response: false
+  stateless: false
+  session_timeout_ms: 0
+  allow_import: false
+  auth:
+    enabled: false
+    secret: ""
+  cors:
+    enabled: false
+    allowed_origins:
+      - http://localhost:3000
+    allowed_methods:
+      - GET
+      - POST
+      - DELETE
+      - OPTIONS
+    allowed_headers:
+      - Content-Type
+      - Accept
+      - Authorization
+      - Mcp-Protocol-Version
+      - Mcp-Session-Id
+      - Last-Event-ID
+      - Mcp-Method
+      - Mcp-Name
+    exposed_headers:
+      - Mcp-Session-Id
+      - WWW-Authenticate
+    allow_credentials: false
+    max_age_seconds: 86400

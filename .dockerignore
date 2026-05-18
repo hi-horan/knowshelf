@@ -1,0 +1,14 @@
+.git
+.github
+_output
+bin
+data
+books
+*.sqlite
+*.sqlite-*
+*.db
+*.log
+.DS_Store
+Dockerfile
+docker-compose*.yml
+README*.tmp

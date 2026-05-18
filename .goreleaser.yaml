@@ -40,6 +40,7 @@ archives:
     wrap_in_directory: true
     files:
       - README.md
+      - README-cn.md
       - config.example.yaml
 
 checksum:

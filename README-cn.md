@@ -111,6 +111,33 @@ health check: /healthz
 - `query`：按问题检索书籍 chunk，可选 `bookID`、`rewrittenQueries`、`hypotheticalAnswer`、`limit`。
 - `listAllBooks`：列出已导入且 active 的书籍 `id` 和 `title`。
 
+客户端接入：
+
+```text
+URL: http://127.0.0.1:8765/mcp
+Header: Authorization: Bearer <token>
+```
+
+先用服务端同一份配置生成只读 MCP token：
+
+```bash
+./_output/knowshelf token_gen -c config.yaml --sub codex --scope mcp:read --ttl 24000h
+```
+
+如果二进制文件放在其他位置，保持使用同一个 `token_gen` 子命令即可。开发时也可以直接运行 `make token`。
+
+以 Codex MCP client 为例，配置完整的 `/mcp` URL，并把 token 放进 HTTP header：
+
+```toml
+[mcp_servers.knowshelf]
+url = "http://127.0.0.1:8765/mcp"
+
+[mcp_servers.knowshelf.http_headers]
+Authorization = "Bearer <token>"
+```
+
+如果从其他机器连接，把 `127.0.0.1` 换成宿主机 IP，并确保端口可以访问。
+
 MCP 支持可选 auth 和 CORS：
 
 - auth 使用 bearer token。

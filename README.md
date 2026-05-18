@@ -113,6 +113,33 @@ Current MCP tools:
 - `query`: search book chunks by question, with optional `bookID`, `rewrittenQueries`, `hypotheticalAnswer`, and `limit`.
 - `listAllBooks`: list all imported active books with `id` and `title`.
 
+Client connection:
+
+```text
+URL: http://127.0.0.1:8765/mcp
+Header: Authorization: Bearer <token>
+```
+
+Generate a read-only MCP token from the same config file used by the server:
+
+```bash
+./_output/knowshelf token_gen -c config.yaml --sub codex --scope mcp:read --ttl 24000h
+```
+
+If the binary is installed somewhere else, use the same `token_gen` subcommand. `make token` runs the equivalent development command.
+
+For a Codex MCP client, configure the full `/mcp` URL and pass the token as an HTTP header:
+
+```toml
+[mcp_servers.knowshelf]
+url = "http://127.0.0.1:8765/mcp"
+
+[mcp_servers.knowshelf.http_headers]
+Authorization = "Bearer <token>"
+```
+
+When connecting from another machine, replace `127.0.0.1` with the host IP and make sure the service port is reachable.
+
 MCP supports optional auth and CORS:
 
 - Auth uses bearer tokens.

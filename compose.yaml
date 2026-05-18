@@ -1,0 +1,27 @@
+services:
+  knowshelf:
+    image: ghcr.io/hi-horan/knowshelf:latest
+    container_name: knowshelf
+    restart: unless-stopped
+    command: ["run", "-c", "/etc/knowshelf/config.yaml"]
+    ports:
+      - "8765:8765"
+    volumes:
+      - type: bind
+        source: ./config.example.yaml
+        target: /etc/knowshelf/config.yaml
+        read_only: true
+      - type: volume
+        source: knowshelf_data
+        target: /app/data
+    networks:
+      - knowshelf
+
+volumes:
+  knowshelf_data:
+    name: knowshelf_data
+
+networks:
+  knowshelf:
+    name: knowshelf
+    driver: bridge

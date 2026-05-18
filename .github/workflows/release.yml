@@ -19,6 +19,7 @@ defaults:
 
 env:
   CMD_PATH: ./cmd/knowshelf
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
 
 jobs:
   test:
